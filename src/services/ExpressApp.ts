@@ -1,6 +1,6 @@
 import express, { Application } from "express";
 import { AdminRoutes, VandorRoutes } from "../routes";
-import bodyParser from "body-parser";
+//import bodyParser from "body-parser"; duriing deployment instead of bodyparser.json we use express.json
 import { FoodRoute } from "../routes/FoodRoutes";
 import multer from "multer";
 import path from "path";
@@ -9,8 +9,8 @@ import { ShoppingRoute } from "../routes";
 import { CustomerRoute } from "../routes";
 
 export default async (app: Application) => {
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
   app.use("./images", express.static(path.join(__dirname, "images")));
   app.use(AdminRoutes);
   app.use(VandorRoutes);

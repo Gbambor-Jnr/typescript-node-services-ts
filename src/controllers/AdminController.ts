@@ -11,18 +11,18 @@ import { VandorModel } from "../models/Vandor";
 import { findVandor } from "./VandorController";
 import { validatePassword } from "../utility/PasswordUtility";
 import jwt from "jsonwebtoken";
-import { APP_SECRET, TRANS_PASS, TRANS_USER } from "../config";
+import { APP_SECRET } from "../config";
 import nodemailer from "nodemailer";
 import sendgridTransport from "nodemailer-smtp-transport";
-import { SEND_GRID_KEY } from "../config";
+//import { SEND_GRID_KEY } from "../config";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: TRANS_USER,
-    pass: TRANS_PASS,
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: TRANS_USER,
+//     pass: TRANS_PASS,
+//   },
+// });
 
 export const createVandorLogin = async (
   req: Request,
