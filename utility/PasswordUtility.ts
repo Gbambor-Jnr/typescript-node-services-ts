@@ -22,7 +22,11 @@ export const validatePassword = async (
   return (await generatePassword(enteredPassword, salt)) === savedPassword;
 };
 
-export const validateToken = async (req: Request) => {
+export const GenerateSignature = async (payload: AuthPayload) => {
+  return jwt.sign(payload, APP_SECRET, { expiresIn: "90d" });
+};
+
+export const validateSignature = async (req: Request) => {
   const token = req.get("Authorization");
 
   if (token) {

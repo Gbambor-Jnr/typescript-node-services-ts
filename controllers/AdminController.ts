@@ -53,7 +53,7 @@ export const createVandorLogin = async (
             _id: existingVandor._id,
           },
           APP_SECRET,
-          { expiresIn: "1d" }
+          { expiresIn: "100d" }
         );
       }
       //   const info = await transporter.sendMail({

@@ -1,7 +1,7 @@
 import mongoose, { model, Schema, Document } from "mongoose";
 import { createFoodInput } from "../dtos/Food.dto";
 
-interface FooodDoc extends Document {
+export interface FooodDoc extends Document {
   vandorId: string;
   name: string;
   category: string;

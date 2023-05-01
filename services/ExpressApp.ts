@@ -5,6 +5,8 @@ import { FoodRoute } from "../routes/FoodRoutes";
 import multer from "multer";
 import path from "path";
 import { FileFilterCallback } from "multer";
+import { ShoppingRoute } from "../routes";
+import { CustomerRoute } from "../routes";
 
 export default async (app: Application) => {
   app.use(bodyParser.json());
@@ -13,6 +15,8 @@ export default async (app: Application) => {
   app.use(AdminRoutes);
   app.use(VandorRoutes);
   app.use(FoodRoute);
+  app.use(ShoppingRoute);
+  app.use(CustomerRoute);
 
   return app;
 };

@@ -8,3 +8,7 @@ export const SEND_GRID_KEY =
 
 export const TRANS_USER = "gbambor@gmail.com";
 export const TRANS_PASS = "Cornelik23232323";
+
+export const TWILO_SID = ""; //gotten from the twilio website
+export const TWILO_AUTH_TOKEN = ""; // from twillio website
+export const TWILO_PHONE = ""; // from twillio website

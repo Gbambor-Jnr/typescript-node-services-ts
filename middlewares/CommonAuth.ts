@@ -1,6 +1,6 @@
 import { AuthPayload } from "../dtos/Auth.dto";
 import { NextFunction, Request, Response } from "express";
-import { validateToken } from "../utility/PasswordUtility";
+import { validateSignature } from "../utility/PasswordUtility";
 
 declare global {
   //the declare global statement is used to define global variables or types that can be accessed from anywhere in your codebase
@@ -18,7 +18,7 @@ export const Authenticate = async (
   res: Response,
   next: NextFunction
 ) => {
-  const validate = await validateToken(req);
+  const validate = await validateSignature(req);
 
   if (validate) {
     next();
